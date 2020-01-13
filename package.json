@@ -1,0 +1,11 @@
+{
+    "name": "suitchi",
+    "version": "0.0.0",
+    "description": "Switch expression",
+    "main": "./suitchi.js",
+    "types": "./suitchi.d.ts",
+    "repository": "https://github.com/z-------------/suitchi.git",
+    "author": "Zack Guard <zacharyguard@gmail.com>",
+    "license": "MIT",
+    "private": false
+}
