@@ -4,8 +4,14 @@
     "description": "Switch expression",
     "main": "./suitchi.js",
     "types": "./suitchi.d.ts",
+    "scripts": {
+        "test": "ava"
+    },
     "repository": "https://github.com/z-------------/suitchi.git",
     "author": "Zack Guard <zacharyguard@gmail.com>",
     "license": "MIT",
-    "private": false
+    "private": false,
+    "devDependencies": {
+        "ava": "^2.4.0"
+    }
 }
