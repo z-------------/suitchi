@@ -40,6 +40,11 @@ const s4 = v => s(v, [
     ["?"],
 ]);
 
+const s5 = v => s(v, [
+    [0, "0"],
+    [() => { return "?"; }],
+]);
+
 test("works when all values are expressions", t => {
     for (const v of range([0,,2])) {
         t.is(v.toString(), s0(v));
@@ -71,4 +76,8 @@ test("returns undefined when no match", t => {
 
 test("returns default value when no match", t => {
     t.is("?", s4(3));
+});
+
+test("default value supports dynamic values", t => {
+    t.is("?", s5(3));
 });
