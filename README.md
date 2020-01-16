@@ -21,6 +21,8 @@ A `RegularCase` matches if its `Case` matches `expression`. The `DefaultCase`, i
 
 When a match is found, the processed value of the corresponding `Value` is returned.
 
+If no match is found, `undefined` is returned.
+
 #### `Case`
 
 If a function, it is called with `expression` and matches if it returns `true`.
