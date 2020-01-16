@@ -1,6 +1,6 @@
 {
     "name": "suitchi",
-    "version": "0.0.4",
+    "version": "0.0.5",
     "description": "Switch expression",
     "main": "./suitchi.js",
     "types": "./suitchi.d.ts",
