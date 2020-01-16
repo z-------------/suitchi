@@ -6,10 +6,10 @@ Switch expressions in JavaScript.
 
 ### `suitchi(expression, mappings)`
 
-| Parameter | Type | Description |
-|---|---|---|
-| `expression` | `any` | The expression to match against the cases in the mappings. |
-| `mappings` | `[RegularCase, ..., DefaultCase?]` | A list of cases to match against to expression. |
+| Parameter    | Type                               | Description                                                |
+|--------------|------------------------------------|------------------------------------------------------------|
+| `expression` | `any`                              | The expression to match against the cases in the mappings. |
+| `mappings`   | `[RegularCase, ..., DefaultCase?]` | A list of cases to match against `expression`.             |
 
 `RegularCase`: `[Case, Value]`
 
