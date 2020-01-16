@@ -33,6 +33,13 @@ const s3 = v => s(v, [
     [[1, 2], "3"],
 ]);
 
+const s4 = v => s(v, [
+    [0, "0"],
+    [1, "1"],
+    [2, "2"],
+    ["?"],
+]);
+
 test("works when all values are expressions", t => {
     for (const v of range([0,,2])) {
         t.is(v.toString(), s0(v));
@@ -56,4 +63,12 @@ test("works when cases are mixed single and multiple", t => {
     t.is("0", s3(0));
     t.is("3", s3(1));
     t.is("3", s3(2));
+});
+
+test("returns undefined when no match", t => {
+    t.is(undefined, s0(3));
+});
+
+test("returns default value when no match", t => {
+    t.is("?", s4(3));
 });
