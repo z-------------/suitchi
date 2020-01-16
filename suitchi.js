@@ -1,4 +1,10 @@
-const matchCase = (expr, caseExpr) => typeof caseExpr === "object" ? caseExpr.includes(expr) : caseExpr === expr;
+const matchCase = (expr, caseExpr) => {
+    if (typeof caseExpr === "function") {
+        return caseExpr(expr) === true;
+    } else {
+        return typeof caseExpr === "object" ? caseExpr.includes(expr) : caseExpr === expr;
+    }
+};
 
 const getVal = val => typeof val === "function" ? val() : val;
 

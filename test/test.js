@@ -45,6 +45,11 @@ const s5 = v => s(v, [
     [() => { return "?"; }],
 ]);
 
+const s6 = v => s(v, [
+    [n => !(n % 2), true],
+    [false],
+]);
+
 test("works when all values are expressions", t => {
     for (const v of range([0,,2])) {
         t.is(v.toString(), s0(v));
@@ -80,4 +85,9 @@ test("returns default value when no match", t => {
 
 test("default value supports dynamic values", t => {
     t.is("?", s5(3));
+});
+
+test("works with case functions", t => {
+    t.is(true, s6(2));
+    t.is(false, s6(3));
 });
