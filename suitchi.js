@@ -5,7 +5,7 @@
  */
 const suitchi = function(expr, mappings) {
     for (const [caseExpr, val] of mappings) {
-        if (caseExpr === expr) {
+        if (typeof caseExpr === "object" ? caseExpr.includes(expr) : caseExpr === expr) {
             return typeof val === "function" ? val() : val;
         }
     }

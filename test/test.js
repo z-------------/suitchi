@@ -28,6 +28,11 @@ const s2 = v => s(v, [
     [3, () => { return "3"; }],
 ]);
 
+const s3 = v => s(v, [
+    [0, "0"],
+    [[1, 2], "3"],
+]);
+
 test("works when all values are expressions", t => {
     for (const v of range([0,,2])) {
         t.is(v.toString(), s0(v));
@@ -45,4 +50,10 @@ test("works when values are mixed expressions and functions", t => {
     for (const v of range([0,,3])) {
         t.is(v.toString(), s2(v));
     }
+});
+
+test("works when cases are mixed single and multiple", t => {
+    t.is("0", s3(0));
+    t.is("3", s3(1));
+    t.is("3", s3(2));
 });
