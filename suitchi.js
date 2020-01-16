@@ -13,13 +13,16 @@ const getVal = val => typeof val === "function" ? val() : val;
  * @param mappings {[*, *][]}
  */
 const suitchi = function(expr, mappings) {
-    for (const [caseExpr, val] of mappings) {
+    for (let i = 0, l = mappings.length; i < l; ++i) {
+        const entry = mappings[i];
+        if (i === mappings.length - 1 && !Array.isArray(entry)) {
+            return getVal(entry);
+        }
+        const [caseExpr, val] = entry;
         if (matchCase(expr, caseExpr)) {
             return getVal(val);
         }
     }
-    const lastMapping = mappings[mappings.length - 1];
-    if (lastMapping && lastMapping.length === 1) return getVal(lastMapping[0]);
 };
 
 module.exports = suitchi;

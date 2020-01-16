@@ -37,17 +37,17 @@ const s4 = v => s(v, [
     [0, "0"],
     [1, "1"],
     [2, "2"],
-    ["?"],
+    "?",
 ]);
 
 const s5 = v => s(v, [
     [0, "0"],
-    [() => { return "?"; }],
+    () => { return "?"; },
 ]);
 
 const s6 = v => s(v, [
     [n => !(n % 2), true],
-    [false],
+    false,
 ]);
 
 test("works when all values are expressions", t => {
