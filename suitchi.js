@@ -1,3 +1,5 @@
+const matchCase = (expr, caseExpr) => typeof caseExpr === "object" ? caseExpr.includes(expr) : caseExpr === expr;
+
 const getVal = val => typeof val === "function" ? val() : val;
 
 /**
@@ -6,7 +8,7 @@ const getVal = val => typeof val === "function" ? val() : val;
  */
 const suitchi = function(expr, mappings) {
     for (const [caseExpr, val] of mappings) {
-        if (typeof caseExpr === "object" ? caseExpr.includes(expr) : caseExpr === expr) {
+        if (matchCase(expr, caseExpr)) {
             return getVal(val);
         }
     }
