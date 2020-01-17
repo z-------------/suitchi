@@ -8,10 +8,6 @@ const matchCase = (expr, caseExpr) => {
 
 const getVal = val => typeof val === "function" ? val() : val;
 
-/**
- * @param expr {*}
- * @param mappings {[*, *][]}
- */
 const suitchi = function(expr, mappings) {
     for (let i = 0, l = mappings.length; i < l; ++i) {
         const entry = mappings[i];
