@@ -6,17 +6,22 @@ const matchCase = (expr, caseExpr) => {
     }
 };
 
-const getVal = val => typeof val === "function" ? val() : val;
+const getVal = (val, expr) => typeof val === "function" ? val(expr) : val;
 
 const suitchi = function(expr, mappings) {
     for (let i = 0, l = mappings.length; i < l; ++i) {
         const entry = mappings[i];
+
+        // default case
         if (i === mappings.length - 1 && !Array.isArray(entry)) {
-            return getVal(entry);
+            const val = entry;
+            return getVal(val, expr);
         }
+
+        // regular case
         const [caseExpr, val] = entry;
         if (matchCase(expr, caseExpr)) {
-            return getVal(val);
+            return getVal(val, expr);
         }
     }
 };

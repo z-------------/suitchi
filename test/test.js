@@ -42,7 +42,7 @@ const s4 = v => s(v, [
 
 const s5 = v => s(v, [
     [0, "0"],
-    () => { return "?"; },
+    (x) => { return `${x}?`; },
 ]);
 
 const s6 = v => s(v, [
@@ -84,7 +84,7 @@ test("returns default value when no match", t => {
 });
 
 test("default value supports dynamic values", t => {
-    t.is("?", s5(3));
+    t.is("3?", s5(3));
 });
 
 test("works with case functions", t => {
